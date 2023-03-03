@@ -2,8 +2,8 @@
 
 # Repository name
 
+# Table of Contents
 <!-- TOC -->
-- [Repository name](#repository-name)
 - [Introduction](#introduction)
   - [About](#about)
   - [Installation](#installation)
