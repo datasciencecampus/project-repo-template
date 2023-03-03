@@ -1,9 +1,11 @@
 # Repository name
 
 <!-- TOC -->
+- [Repository name](#repository-name)
 - [Introduction](#introduction)
   - [About](#about)
   - [Installation](#installation)
+    - [Pre-commit actions](#pre-commit-actions)
   - [Usage](#usage)
   - [Workflow](#workflow)
 - [Data Science Campus](#data-science-campus)
@@ -11,14 +13,30 @@
 <!-- /TOC -->
 
 # Introduction
-## About 
-Describe what this repo contains. 
+## About
+Describe what this repo contains.
 
-## Installation 
+## Installation
 **Note: Delete section if not applicable, but can be useful to describe set-up. Such as the required dependencies.**
 
-## Usage 
-**Note: Delete section if not applicable, 
+### Pre-commit actions
+This repository contains a configuration of pre-commit hooks. These are language agnostic and focussed on repository security (such as detection of passwords and API keys). If approaching this project as a developer, you are encouraged to install and enable `pre-commits` by running the following in your shell:
+   1. Install `pre-commit`:
+
+      ```
+      pip install pre-commit
+      ```
+   2. Enable `pre-commit`:
+
+      ```
+      pre-commit install
+      ```
+Once pre-commits are activated, whenever you commit to this repository a series of checks will be executed. The pre-commits include checking for security keys, large files and unresolved merge conflict headers. The use of active pre-commits are highly encouraged and the given hooks can be expanded with Python or R specific hooks that can automate the code style and linting. For example, the `flake8` and `black` hooks are useful for maintaining consistent Python code formatting.
+
+**NOTE:** Pre-commit hooks execute Python, so it expects a working Python build.
+
+## Usage
+**Note: Delete section if not applicable,
 but generaly you need to explain how to use the things in the repo**
 
 ## Workflow
