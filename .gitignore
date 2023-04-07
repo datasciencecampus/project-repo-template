@@ -14,6 +14,10 @@ outputs/*
 *.zip
 *.csv
 *.pkl
+*.rds
+*.rda
+*.parquet
+*.arrow
 
 # Office files
 *.doc
