@@ -2,24 +2,12 @@
 
 # Repository name
 
-# Table of Contents
-<!-- TOC -->
-- [Introduction](#introduction)
-  - [About](#about)
-  - [Installation](#installation)
-    - [Pre-commit actions](#pre-commit-actions)
-  - [Usage](#usage)
-  - [Workflow](#workflow)
-- [Data Science Campus](#data-science-campus)
-- [License](#license)
-<!-- /TOC -->
-
 # Introduction
 ## About
-Describe what this repo contains.
+*Describe what this repo contains and what the project is.*
 
 ## Installation
-**Note: Delete section if not applicable, but can be useful to describe set-up. Such as the required dependencies.**
+*Describe technical set-up. Such as the required dependencies.*
 
 ### Pre-commit actions
 This repository contains a configuration of pre-commit hooks. These are language agnostic and focussed on repository security (such as detection of passwords and API keys). If approaching this project as a developer, you are encouraged to install and enable `pre-commits` by running the following in your shell:
@@ -38,11 +26,10 @@ Once pre-commits are activated, whenever you commit to this repository a series 
 **NOTE:** Pre-commit hooks execute Python, so it expects a working Python build.
 
 ## Usage
-**Note: Delete section if not applicable,
-but generaly you need to explain how to use the things in the repo**
+*Explain how to use the things in the repo.*
 
-## Workflow
-You may wish to consider generating a graph to show your project workflow. GitHub markdown provides native support for [mermaid](https://mermaid.js.org/syntax/flowchart.html), an example of which is provided below:
+### Workflow
+*You may wish to consider generating a graph to show your project workflow. GitHub markdown provides native support for [mermaid](https://mermaid.js.org/syntax/flowchart.html), an example of which is provided below:*
 
 ```mermaid
 flowchart TD
