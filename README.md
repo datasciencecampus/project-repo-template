@@ -1,4 +1,4 @@
-<img src="https://github.com/datasciencecampus/awesome-campus/blob/master/ons_dsc_logo.png">
+<img src="https://github.com/datasciencecampus/awesome-campus/blob/master/ons_logo.png">
 
 # Repository name
 
