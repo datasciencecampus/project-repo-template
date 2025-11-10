@@ -38,10 +38,6 @@ flowchart TD
    id2 --> id4[Some output]
 ```
 
-
-# Data Science Campus
-At the [Data Science Campus](https://datasciencecampus.ons.gov.uk/about-us/) we apply data science, and build skills, for public good across the UK and internationally. Get in touch with the Campus at [datasciencecampus@ons.gov.uk](datasciencecampus@ons.gov.uk).
-
 # License
 
 <!-- Unless stated otherwise, the codebase is released under [the MIT Licence][mit]. -->
