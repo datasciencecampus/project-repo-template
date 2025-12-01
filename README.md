@@ -1,4 +1,4 @@
-<img src="https://github.com/datasciencecampus/awesome-campus/blob/master/ons_dsc_logo.png">
+<img src="https://github.com/datasciencecampus/awesome-campus/blob/master/ons_logo.png">
 
 # Repository name
 
@@ -37,10 +37,6 @@ flowchart TD
    id3[(More data)] --> id2
    id2 --> id4[Some output]
 ```
-
-
-# Data Science Campus
-At the [Data Science Campus](https://datasciencecampus.ons.gov.uk/about-us/) we apply data science, and build skills, for public good across the UK and internationally. Get in touch with the Campus at [datasciencecampus@ons.gov.uk](datasciencecampus@ons.gov.uk).
 
 # License
 
