@@ -3,9 +3,10 @@
 Contributors to repositories hosted by the Office for National Statistics (ONS) must follow this Code of Conduct, based on the Contributor Covenant v3.0, and adhere to the [Civil Service Code](https://www.gov.uk/government/publications/civil-service-code/the-civil-service-code).
 
 > Terminology:
-> * "project" refers to ONS repositories and associated collaboration spaces.
-> * "maintainer" refers to ONS repository owners and designated maintainers.
-> * "leadership" refers to repository owners, line managers, and delegated governance roles.
+
+> * **"Project"** refers to ONS repositories and associated collaboration spaces.
+> * **"Maintainer"** refers to ONS repository owners and designated maintainers.
+> * **"Leadership"** refers to repository owners, line managers, and delegated governance roles.
 
 ## Our Pledge
 
@@ -16,6 +17,7 @@ We commit to act and interact in ways that contribute to an open, welcoming, div
 ## Our Standards
 
 Examples of behaviour that contributes to a positive environment include:
+
 * Demonstrating empathy and kindness toward other people
 * Being respectful of differing opinions, viewpoints, and experiences
 * Giving and gracefully accepting constructive feedback
@@ -23,6 +25,7 @@ Examples of behaviour that contributes to a positive environment include:
 * Focusing on what is best for the overall community and public service mission
 
 Examples of unacceptable behaviour include:
+
 * Harassment of any kind, including sexual language or imagery, unwelcome advances
 * Trolling, insulting or derogatory comments, and personal or political attacks
 * Public or private harassment, including repeated unwanted contact
@@ -52,18 +55,22 @@ Maintainers or leadership who do not act in good faith in enforcing this Code ma
 Community leaders will follow these guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
 
 ### 1. Correction
+
 **Impact:** Use of inappropriate language or other behaviour deemed unprofessional or unwelcome but believed to be an isolated incident.<br>
 **Consequence:** A private, written warning from maintainers, including clarification of the expected behaviour. A copy may be stored for audit.
 
 ### 2. Warning
+
 **Impact:** A violation through a single incident or series of actions after a previous correction.<br>
 **Consequence:** A formal warning, with potential temporary restriction on interaction (e.g. commenting). Repeated behaviour may escalate.
 
 ### 3. Temporary Ban
+
 **Impact:** Repeated violations of the Code, including sustained inappropriate behaviour.<br>
 **Consequence:** Temporary removal from all interaction within project spaces for a defined period. Conditions for reinstatement will be specified.
 
 ### 4. Permanent Ban
+
 **Impact:** Demonstrating a pattern of violation, harassment, or aggression, or refusal to cease unacceptable behaviour.<br>
 **Consequence:** Permanent removal from all project spaces. Future contributions may be rejected automatically.
 
