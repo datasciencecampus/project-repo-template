@@ -36,5 +36,5 @@ jobs:
           commit-message: "chore(pre-commit): autoupdate hooks"
           title: "chore(pre-commit): autoupdate hooks"
           body: "Automated pre-commit hook updates."
-          labels: automation, pre-commit
+          labels: automation, pre-commit, dependencies
           branch: chore/pre-commit-autoupdate
