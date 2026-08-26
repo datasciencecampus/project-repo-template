@@ -1,0 +1,148 @@
+name: Template Bootstrap Placeholders
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap-placeholders:
+    # Run only in repositories created from this template, and only on default branch.
+    if: github.repository != 'datasciencecampus/project-repo-template' && github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Write placeholder files
+        shell: bash
+        run: |
+          cat > README.md <<'EOF'
+          # Repository name
+
+          # Introduction
+          ## About
+          *Describe what this repo contains and what the project is.*
+
+          ## Installation
+          *Describe technical set-up. Such as the required dependencies.*
+
+          ### Pre-commit actions
+          This repository contains a configuration of pre-commit hooks. These are language agnostic and focussed on repository security (such as detection of passwords and API keys). If approaching this project as a developer, you are encouraged to install and enable `pre-commits` by running the following in your shell:
+             1. Install `pre-commit`:
+
+                ```
+                pip install pre-commit
+                ```
+             2. Enable `pre-commit`:
+
+                ```
+                pre-commit install
+                ```
+          Once pre-commits are activated, whenever you commit to this repository a series of checks will be executed. The pre-commits include checking for security keys, large files and unresolved merge conflict headers. The use of active pre-commits are highly encouraged and the given hooks can be expanded with Python or R specific hooks that can automate the code style and linting. For example, the `flake8` and `black` hooks are useful for maintaining consistent Python code formatting.
+
+          **NOTE:** Pre-commit hooks execute Python, so it expects a working Python build.
+
+          ## Usage
+          *Explain how to use the things in the repo.*
+
+          ### Workflow
+          *You may wish to consider generating a graph to show your project workflow. GitHub markdown provides native support for [mermaid](https://mermaid.js.org/syntax/flowchart.html), an example of which is provided below:*
+
+          \`\`\`mermaid
+          flowchart TD
+             id1[(Some data)] --> id2(Some processing)
+             id3[(More data)] --> id2
+             id2 --> id4[Some output]
+          \`\`\`
+
+          # Contributing
+
+          Before contributing to this project, please read our [contribution guidelines](CONTRIBUTING.md). Unsolicited pull requests from external contributors will not be accepted, but we welcome feedback and suggestions via issues.
+
+          # Governance and Conduct
+
+          This project is governed by the following key documents:
+
+          - **[CODE_OF_CONDUCT](CODE_OF_CONDUCT.md)** — Our community standards and expectations for respectful interaction.
+          - **[SECURITY](SECURITY.md)** — Guidelines for reporting security vulnerabilities responsibly.
+          - **[CODEOWNERS](CODEOWNERS)** — Records of project ownership and maintainers.
+
+          # License
+
+          <!-- Unless stated otherwise, the codebase is released under [the MIT Licence][mit]. -->
+
+          The code, unless otherwise stated, is released under [the MIT Licence][mit].
+
+          The documentation for this work is subject to [© Crown copyright][copyright] and is available under the terms of the [Open Government 3.0][ogl] licence.
+
+          [mit]: LICENCE
+          [copyright]: http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/
+          [ogl]: http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+          EOF
+
+          cat > CODEOWNERS <<'EOF'
+          # CODEOWNERS placeholder
+          #
+          # Replace this file with repository-specific owners.
+          #
+          # Example:
+          # * @your-org/your-team
+          EOF
+
+          cat > PIRR.md <<'EOF'
+          # Private/Internal Repository Reasoning Record (PIRR)
+
+          This is placeholder content generated when the repository was first created from the template.
+
+          Replace this file with your project-specific PIRR information.
+
+          ## Repository Name
+          <!-- Add repository name -->
+
+          ## Date Reviewed
+          <!-- Add review date in yyyy-mm-dd format -->
+
+          ## Reason for Private/Internal Repository
+          <!-- Explain why this repository is private/internal -->
+
+          ## Sensitivity of Information
+          <!-- Describe sensitive information in this repository -->
+
+          ## Access Control Needs
+          <!-- Describe access control requirements -->
+
+          ## Collaboration Requirements
+          <!-- Describe collaboration constraints that require private/internal visibility -->
+
+          ## Security and Compliance Considerations
+          <!-- Document relevant security/compliance requirements -->
+
+          ## Additional Notes
+          <!-- Add anything else relevant -->
+          EOF
+
+      - name: Remove bootstrap workflow
+        shell: bash
+        run: |
+          rm -f .github/workflows/template-bootstrap-placeholders.yml
+
+      - name: Commit placeholder files
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md CODEOWNERS PIRR.md
+          git add -u .github/workflows/template-bootstrap-placeholders.yml
+          git commit -m "chore: initialize template placeholder content and remove bootstrap workflow"
+          git push origin HEAD:${{ github.ref_name }}

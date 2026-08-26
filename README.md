@@ -1,49 +1,47 @@
-# Repository name
+# Data Science Campus Project Template
 
-# Introduction
-## About
-*Describe what this repo contains and what the project is.*
+This is a template repository for creating new projects in the Data Science Campus. When you create a new repository from this template, it will automatically generate placeholder content for key governance and project files.
 
-## Installation
-*Describe technical set-up. Such as the required dependencies.*
+## ONS GitHub Policy
 
-### Pre-commit actions
-This repository contains a configuration of pre-commit hooks. These are language agnostic and focussed on repository security (such as detection of passwords and API keys). If approaching this project as a developer, you are encouraged to install and enable `pre-commits` by running the following in your shell:
-   1. Install `pre-commit`:
+All repositories in the ONS GitHub organisation must comply with the [ONS GitHub Usage Policy](https://github.com/ONSdigital/software-engineer-community/blob/master/Software%20Engineering%20Principles_Policies_Guidelines_Templates_Plans%20and%20more/Software%20Engineering%20Policies/GitHub%20Usage%20Policy.pdf). Key principles:
 
-      ```
-      pip install pre-commit
-      ```
-   2. Enable `pre-commit`:
+- **Repositories should be public by default**, unless there is a specific reason for them to be private or internal.
+- **LICENSE is required** for all public repositories. This template includes an MIT License by default; customise it as appropriate for your project.
+- **CODEOWNERS is required** by ONS organisational policy. This should point to a team (preferably), or an individual if this is a personal project or experimental repository.
+- **PIRR (Private/Internal Repository Reasoning Record) is required** for any repository with private or internal visibility. This documents why the repository cannot be public and includes assessments of sensitivity, access control needs, security, and compliance considerations.
 
-      ```
-      pre-commit install
-      ```
-Once pre-commits are activated, whenever you commit to this repository a series of checks will be executed. The pre-commits include checking for security keys, large files and unresolved merge conflict headers. The use of active pre-commits are highly encouraged and the given hooks can be expanded with Python or R specific hooks that can automate the code style and linting. For example, the `flake8` and `black` hooks are useful for maintaining consistent Python code formatting.
+## Using This Template
 
-**NOTE:** Pre-commit hooks execute Python, so it expects a working Python build.
+To create a new project from this template:
 
-## Usage
-*Explain how to use the things in the repo.*
+1. Click the **Use this template** button on GitHub
+2. Choose a name and owner for your new repository
+3. Set the repository visibility to **Public** (unless there's a documented reason in PIRR to make it private/internal)
+4. The bootstrap workflow will automatically:
+   - Generate a `README.md` with project structure guidance
+   - Create placeholder files for `CODEOWNERS` and `PIRR.md`
+   - Remove the bootstrap workflow itself
 
-### Workflow
-*You may wish to consider generating a graph to show your project workflow. GitHub markdown provides native support for [mermaid](https://mermaid.js.org/syntax/flowchart.html), an example of which is provided below:*
+You can then customize these placeholder files for your specific project and update the repository visibility and ownership as needed.
 
-```mermaid
-flowchart TD
-   id1[(Some data)] --> id2(Some processing)
-   id3[(More data)] --> id2
-   id2 --> id4[Some output]
-```
 
-# License
+## Template Contents
 
-<!-- Unless stated otherwise, the codebase is released under [the MIT Licence][mit]. -->
+This template includes:
 
-The code, unless otherwise stated, is released under [the MIT Licence][mit].
+- **README.md** — Starter template with sections for project description, installation, usage, and workflows
+- **CONTRIBUTING.md** — Guidelines indicating unsolicited PRs are not accepted
+- **CODE_OF_CONDUCT.md** — Community standards for respectful interaction
+- **SECURITY.md** — Responsible vulnerability disclosure guidelines
+- **CODEOWNERS** — Placeholder for project ownership configuration
+- **PIRR.md** — Private/Internal Repository Reasoning Record template
+- **Pre-commit hooks** — Security-focused checks for common issues (passwords, API keys, large files, merge conflicts)
+- **Project structure** — Standard directories for `data/`, `docs/`, `outputs/`, `src/`, and `tests/`
 
-The documentation for this work is subject to [© Crown copyright][copyright] and is available under the terms of the [Open Government 3.0][ogl] licence.
+## Contributing to the Template
 
-[mit]: LICENCE
-[copyright]: http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/
-[ogl]: http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+We do not accept unsolicited pull requests to this template. If you have suggestions or feedback, please open an issue.
+
+For information on reporting security issues, see [SECURITY.md](SECURITY.md).
+
