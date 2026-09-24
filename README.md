@@ -36,6 +36,7 @@ This template includes:
 - **SECURITY.md** — Responsible vulnerability disclosure guidelines
 - **CODEOWNERS** — Placeholder for project ownership configuration
 - **PIRR.md** — Private/Internal Repository Reasoning Record template
+- **pyproject.toml** — Python project and dependency configuration managed with `uv`
 - **Pre-commit hooks** — Security-focused checks for common issues (passwords, API keys, large files, merge conflicts)
 - **Project structure** — Standard directories for `data/`, `docs/`, `outputs/`, `src/`, and `tests/`
 
