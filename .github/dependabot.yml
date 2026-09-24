@@ -12,6 +12,8 @@ updates:
       day: "tuesday"
       time: "07:00"
       timezone: "Europe/London"
+    cooldown:
+      default-days: 7
     groups:
       pip-minor-patch:
         update-types:
@@ -35,6 +37,8 @@ updates:
       day: "tuesday"
       time: "07:00"
       timezone: "Europe/London"
+    cooldown:
+      default-days: 7
     groups:
       github-actions-minor-patch:
         update-types:
@@ -44,6 +48,30 @@ updates:
         update-types:
           - "major"
     labels: ["dependencies", "github_actions", "automation"]
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # Pre-commit hooks
+  - package-ecosystem: "pre-commit"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+      time: "07:00"
+      timezone: "Europe/London"
+    cooldown:
+      default-days: 7
+    groups:
+      pre-commit-minor-patch:
+        update-types:
+          - "minor"
+          - "patch"
+      pre-commit-major:
+        update-types:
+          - "major"
+    labels: ["dependencies", "pre-commit", "automation"]
     open-pull-requests-limit: 10
     commit-message:
       prefix: "chore"
