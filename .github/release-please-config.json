@@ -1,10 +1,16 @@
 {
-  "release-type": "simple",
-  "changelog-path": "CHANGELOG.md",
-  "extra-files": [
-    {
-      "type": "plain-text",
-      "path": ".github/.project-repo-template-version"
+  "packages": {
+    ".": {
+      "release-type": "simple",
+      "changelog-path": "CHANGELOG.md",
+      "extra-files": [
+        ".github/.project-repo-template-version",
+        {
+          "type": "toml",
+          "path": "pyproject.toml",
+          "jsonpath": "$.project.version"
+        }
+      ]
     }
-  ]
+  }
 }
