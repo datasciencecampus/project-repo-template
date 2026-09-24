@@ -131,6 +131,10 @@ jobs:
         shell: bash
         run: |
           rm -f .github/workflows/template-bootstrap-placeholders.yml
+          rm -f .github/workflows/release-please.yml
+          rm -f .github/release-please-config.json
+          rm -f .github/release-please-manifest.json
+          rm -f CHANGELOG.md
 
       - name: Commit placeholder files
         shell: bash
@@ -143,6 +147,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md CODEOWNERS PIRR.md
-          git add -u .github/workflows/template-bootstrap-placeholders.yml
+          git add -u .github
+          if git ls-files --error-unmatch CHANGELOG.md >/dev/null 2>&1; then
+            git add -u CHANGELOG.md
+          fi
           git commit -m "chore: initialize template placeholder content and remove bootstrap workflow"
           git push origin HEAD:${{ github.ref_name }}
