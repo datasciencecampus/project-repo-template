@@ -1,4 +1,4 @@
 # Terraform template version used to create this repository.
 # Do not delete: this file preserves the repository's template provenance.
 # Source: https://github.com/datasciencecampus/project-repo-template
-0.2.0 # x-release-please-version
+0.3.0 # x-release-please-version

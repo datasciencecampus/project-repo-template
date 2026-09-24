@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/datasciencecampus/project-repo-template/compare/v0.2.0...v0.3.0) (2026-09-24)
+
+
+### Features
+
+* Enhance pull request template with detailed sections for overview and changes ([feecf67](https://github.com/datasciencecampus/project-repo-template/commit/feecf6784d379d8e4043c8c5420cc622511903cf))
+
 ## [0.2.0](https://github.com/datasciencecampus/project-repo-template/compare/v0.1.0...v0.2.0) (2026-09-24)
 
 
