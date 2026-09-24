@@ -4,13 +4,13 @@ on:
   push:
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
   bootstrap-placeholders:
     # Run only in repositories created from this template, and only on default branch.
     if: github.repository != 'datasciencecampus/project-repo-template' && github.ref_name == github.event.repository.default_branch
+    permissions:
+      contents: write # Required to push the bootstrap branch.
+      pull-requests: write # Required to open the initialization PR.
     runs-on: ubuntu-latest
 
     steps:
@@ -92,6 +92,20 @@ jobs:
           [ogl]: http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
           EOF
 
+          cat > pyproject.toml <<'EOF'
+          [project]
+          name = "project-name"
+          version = "0.1.0"
+          description = "Project description"
+          requires-python = ">=3.10"
+          dependencies = []
+
+          [dependency-groups]
+          dev = [
+              "pre-commit>=4.0",
+          ]
+          EOF
+
           cat > CODEOWNERS <<'EOF'
           # CODEOWNERS placeholder
           #
@@ -133,6 +147,14 @@ jobs:
           <!-- Add anything else relevant -->
           EOF
 
+      - name: Set up uv
+        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          enable-cache: false
+
+      - name: Generate uv lockfile
+        run: uv lock
+
       - name: Remove bootstrap workflow
         shell: bash
         run: |
@@ -145,17 +167,28 @@ jobs:
       - name: Commit placeholder files
         shell: bash
         run: |
-          if git diff --quiet; then
-            echo "No changes to commit."
-            exit 0
-          fi
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md CODEOWNERS PIRR.md
+          git add README.md CODEOWNERS PIRR.md pyproject.toml uv.lock
           git add -u .github
           if git ls-files --error-unmatch CHANGELOG.md >/dev/null 2>&1; then
             git add -u CHANGELOG.md
           fi
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          branch="chore/bootstrap-placeholders-${{ github.run_id }}"
+          git switch -c "$branch"
           git commit -m "chore: initialize template placeholder content and remove bootstrap workflow"
-          git push origin HEAD:${{ github.ref_name }}
+          git push --set-upstream origin "$branch"
+
+          gh pr create \
+            --base "${{ github.event.repository.default_branch }}" \
+            --head "$branch" \
+            --title "chore: initialize repository from template" \
+            --body "Initialise placeholder governance files and project setup from the template."
+        env:
+          GH_TOKEN: ${{ github.token }}
